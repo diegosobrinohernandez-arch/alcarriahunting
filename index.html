@@ -246,8 +246,9 @@ footer{background:rgba(245,240,232,.95);border-top:1px solid rgba(184,8,30,.12);
 
 /* RESPONSIVE */
 @media(max-width:900px){
-  nav{padding:.8rem 1.4rem}
+  nav{padding:.8rem 1.4rem;flex-wrap:wrap;gap:.5rem}
   .logo-sep,.logo-organica-wrap{display:none}
+  .nav-cta{flex-wrap:wrap;gap:.4rem}
   .mc{grid-template-columns:90px 1fr auto;gap:1rem}
   .mc .badge{display:none}
   .porqué-grid{grid-template-columns:1fr;gap:3rem}
@@ -256,6 +257,22 @@ footer{background:rgba(245,240,232,.95);border-top:1px solid rgba(184,8,30,.12);
   .ft-organica{align-items:flex-start}
   .ft-links{order:1;margin-top:.25rem}
 }
+@media(max-width:600px){
+  /* Nav: logo arriba, botones abajo en fila */
+  nav{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:.7rem 1rem;
+    gap:.55rem;
+  }
+  .logo-nav{width:100%}
+  .nav-cta{width:100%;justify-content:flex-start;gap:.45rem}
+  .btn-wa{font-size:.7rem;padding:.42rem .9rem}
+  /* Hero: dar padding-top suficiente para nav de 2 líneas */
+  #hero{
+    padding-top:130px!important;
+  }
+}
 @media(max-width:520px){
   h1{font-size:4.2rem}
   .hero-stats{gap:0}
@@ -263,7 +280,10 @@ footer{background:rgba(245,240,232,.95);border-top:1px solid rgba(184,8,30,.12);
   .mc{grid-template-columns:1fr auto;padding:1rem 1rem}
   .mc-fecha{display:none}
   .accion{flex-direction:column;align-items:flex-start}
-  nav{padding:.65rem 1rem}
+}
+@media(max-width:400px){
+  h1{font-size:3.4rem}
+  .btn-wa{font-size:.65rem;padding:.38rem .75rem}
 }
 
 /* ── INFO BUTTON & MODAL ── */
@@ -372,7 +392,7 @@ section + section{
  }
  .hero-stats{
    display:grid!important;
-   grid-template-columns:1fr!important;
+   grid-template-columns:1fr 1fr!important;
  }
  .stat{
    border-right:none!important;
@@ -380,7 +400,31 @@ section + section{
    padding:.75rem 0!important;
  }
  nav{
-   padding:.75rem 1rem!important;
+   padding:.7rem 1rem!important;
+ }
+}
+
+@media (max-width:600px){
+ /* Nav en 2 líneas: logo + botones debajo */
+ nav{
+   flex-direction:column!important;
+   align-items:flex-start!important;
+   padding:.7rem 1rem!important;
+   gap:.55rem!important;
+ }
+ /* Hero con espacio para nav de 2 líneas (~120px) */
+ #hero{
+   padding-top:140px!important;
+ }
+ /* Temporada: quitar badge y ajustar grid */
+ .nav-cta{
+   width:100%!important;
+   display:flex!important;
+   gap:.4rem!important;
+ }
+ /* Instagram / contacto en sección no solapan */
+ #contacto{
+   padding:0!important;
  }
 }
 </style>
@@ -629,11 +673,7 @@ section + section{
         </div>
         <div class="ft-sub">Monterías y Recechos · Castilla · Temporada 2026/27</div>
       </div>
-      <nav class="ft-links">
-        <a href="#temporada">Temporada</a>
-        <a href="#contacto">Contacto</a>
-        <a href="https://instagram.com/alcarriahunting" target="_blank" rel="noopener">Instagram</a>
-      </nav>
+
       <div class="ft-organica">
         <span class="ft-organica-top">la Orgánica</span>
         <span class="ft-organica-bot">Organización</span>
