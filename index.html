@@ -192,6 +192,41 @@ h2.titulo em{color:var(--rojo-vivo);font-style:normal}
 .btn-wa-accion{display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;white-space:nowrap}
 .btn-wa-accion:hover{background:#1da851;transform:translateY(-2px)}
 
+/* TIRADAS */
+#tiradas{padding:7rem 0 5rem;background:#fff}
+.tiradas-header{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem}
+.bandera-es{display:flex;flex-direction:column;gap:0;width:52px;flex-shrink:0;border-radius:2px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.bandera-es span{display:block;height:10px}
+.bandera-es .rojo{background:#c60b1e}
+.bandera-es .amarillo{background:#f1bf00;height:16px}
+.tiradas-titulo{font-family:var(--display);font-size:clamp(2rem,4.5vw,3.5rem);line-height:.93;color:var(--negro);letter-spacing:.03em}
+.tiradas-titulo em{color:var(--rojo-vivo);font-style:normal}
+.tiradas-table{width:100%;border-collapse:collapse;font-family:var(--sans);margin-bottom:1.5rem}
+.tiradas-table thead tr{background:var(--negro)}
+.tiradas-table thead th{padding:.9rem 1rem;font-size:.6rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.6);text-align:left}
+.tiradas-table thead th:last-child{text-align:right}
+.tiradas-table tbody tr{border-bottom:1px solid rgba(10,7,4,.07);transition:background .15s}
+.tiradas-table tbody tr:hover{background:rgba(245,240,232,.7)}
+.tiradas-table tbody td{padding:1.3rem 1rem;vertical-align:middle}
+.td-fecha{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em;color:var(--negro);white-space:nowrap}
+.td-finca{font-family:var(--serif);font-weight:600;font-size:1.05rem;color:var(--negro)}
+.td-pajaros{font-family:var(--sans);font-size:.85rem;color:rgba(10,7,4,.6);line-height:1.6}
+.td-puestos{font-family:var(--display);font-size:1.6rem;color:var(--oro)}
+.td-precio{font-family:var(--display);font-size:2rem;color:var(--rojo-vivo);text-align:right;white-space:nowrap}
+.td-obs{font-family:var(--sans);font-size:.72rem;color:rgba(10,7,4,.5);max-width:160px;line-height:1.5;font-style:italic}
+.tiradas-nota{font-family:var(--sans);font-size:.75rem;color:rgba(10,7,4,.45);line-height:1.8;border-left:2px solid var(--rojo);padding-left:1rem;margin-bottom:3rem}
+.tiradas-cta{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-wa-tirada{display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#fff;font-family:var(--sans);font-weight:500;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;padding:.9rem 1.8rem;border-radius:2px;text-decoration:none;transition:background .2s,transform .2s;white-space:nowrap}
+.btn-wa-tirada:hover{background:#1da851;transform:translateY(-2px)}
+.btn-wa-tirada-sec{background:transparent;border:1px solid rgba(37,211,102,.5);color:#25D366}
+.btn-wa-tirada-sec:hover{background:rgba(37,211,102,.08);transform:translateY(-2px)}
+
+/* TIRADAS PERDICES */
+#tiradas-perdices{padding:5rem 0;background:rgba(245,240,232,.45);border-top:1px solid rgba(10,7,4,.07)}
+.tp-wrap{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.tp-desc{font-family:var(--sans);font-weight:300;font-size:.85rem;color:rgba(10,7,4,.55);line-height:1.9;margin-top:.8rem;max-width:480px}
+.tp-tag{font-family:var(--display);font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--rojo-vivo);border:1px solid rgba(184,8,30,.3);padding:.25rem .9rem;margin-bottom:1rem;display:inline-block}
+
 /* POR QUÉ */
 #porqué{padding:7rem 0;background:rgba(245,240,232,.6)}
 .porqué-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
@@ -256,8 +291,13 @@ footer{background:rgba(245,240,232,.95);border-top:1px solid rgba(184,8,30,.12);
   .ft{flex-direction:column;align-items:flex-start}
   .ft-organica{align-items:flex-start}
   .ft-links{order:1;margin-top:.25rem}
+  .tiradas-table thead th:nth-child(6),.tiradas-table tbody td:nth-child(6){display:none}
 }
 @media(max-width:600px){
+  .tiradas-table thead th:nth-child(3),.tiradas-table tbody td:nth-child(3){display:none}
+  .tiradas-titulo{font-size:clamp(1.6rem,7vw,2.5rem)}
+  .tp-wrap{grid-template-columns:1fr}
+  .tp-wrap>div:last-child{display:none}
   /* Nav: logo arriba, botones abajo en fila */
   nav{
     flex-direction:column;
@@ -625,6 +665,53 @@ section + section{
   </div>
 </section>
 
+<!-- TIRADAS DE PERDICES Y FAISANES -->
+<section id="tiradas">
+  <div class="container" style="padding-top:7rem;padding-bottom:3rem">
+
+    <div class="tiradas-header r d1">
+      <div class="bandera-es" aria-hidden="true">
+        <span class="rojo"></span>
+        <span class="amarillo"></span>
+        <span class="rojo"></span>
+      </div>
+      <div>
+        <p class="sec-label" style="margin-bottom:.5rem">Temporada 2026/2027</p>
+        <h2 class="tiradas-titulo">TIRADAS DE PERDICES<br>&amp; <em>FAISANES</em></h2>
+      </div>
+      <div class="bandera-es" aria-hidden="true" style="margin-left:auto">
+        <span class="rojo"></span>
+        <span class="amarillo"></span>
+        <span class="rojo"></span>
+      </div>
+    </div>
+
+    <div class="monterias r d2" style="margin-bottom:2rem">
+      <div class="mc" onclick="openModal('t1')">
+        <div class="mc-fecha">8 DIC<small>2026</small></div>
+        <div><div class="mc-finca">30 min. de Madrid</div><div class="mc-esp">~ 500 Perdices · 15 puestos</div></div>
+        <button class="mc-info-btn" onclick="event.stopPropagation();openModal('t1')" title="Ver información">i</button>
+        <div class="mc-precio">420€<small>por puesto</small></div>
+        <span class="badge bt">Perdices</span>
+      </div>
+      <div class="mc" onclick="openModal('t2')">
+        <div class="mc-fecha">3 ENE<small>2027</small></div>
+        <div><div class="mc-finca">30 min. de Madrid</div><div class="mc-esp">~ 400 Perdices + ~ 100 Faisanes · 15 puestos</div></div>
+        <button class="mc-info-btn" onclick="event.stopPropagation();openModal('t2')" title="Ver información">i</button>
+        <div class="mc-precio">480€<small>por puesto</small></div>
+        <span class="badge bt">Perdices + Faisanes</span>
+      </div>
+    </div>
+
+    <p class="tiradas-nota r d3">
+      (*) Se dará un taco a media mañana y comida al finalizar la tirada. Se puede ir por la tarde a rebuscar con perro. Se puede doblar puesto, el acompañante 20€. La organización se reserva el derecho de modificar las fechas por causa de fuerza mayor.
+    </p>
+
+  </div>
+</section>
+
+
+
 <!-- POR QUÉ -->
 <section id="porqué">
   <div class="container" style="padding-top:7rem;padding-bottom:7rem">
@@ -925,6 +1012,61 @@ section + section{
     <div class="modal-footer">
       <div class="modal-precio">200€<small style="font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.1em;display:block;color:rgba(10,7,4,.4)">por puesto</small></div>
       <a href="https://wa.me/34617517665?text=Hola%20Pedro%2C%20me%20interesa%20la%20monter%C3%ADa%20de%20Cobeta%20(7%20feb)" target="_blank" class="modal-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<!-- T1: Tirada Perdices 8 DIC -->
+<div class="modal-overlay" id="t1">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('t1')">✕</button>
+      <div class="m-fecha">08 — 12 — 2026</div>
+      <div class="m-finca">Tirada de Perdices</div>
+      <div class="m-loc">📍 30 min. de Madrid</div>
+    </div>
+    <div class="modal-body">
+      <p>Jornada de caza de perdiz en finca privada a 30 minutos de Madrid. <strong>~ 500 perdices soltadas</strong>, 15 puestos disponibles.</p>
+      <p>Se dará un taco a media mañana y comida al finalizar la tirada. Por la tarde se puede ir a rebuscar con perro. <strong>Se puede doblar puesto por 20€</strong>.</p>
+      <p>La organización se reserva el derecho de modificar las fechas por causa de fuerza mayor.</p>
+      <div>
+        <span class="modal-tag mt-rojo">~ 500 Perdices</span>
+        <span class="modal-tag mt-verde">15 puestos</span>
+        <span class="modal-tag mt-oro">Taco + Comida incluidos</span>
+        <span class="modal-tag mt-verde">Rebusca con perro (tarde)</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-precio">420€<small style="font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.1em;display:block;color:rgba(10,7,4,.4)">por puesto</small></div>
+      <a href="https://wa.me/34617517665?text=Hola%20Pedro%2C%20me%20interesa%20la%20tirada%20de%20perdices%20del%208%20de%20diciembre%20de%202026" target="_blank" class="modal-wa">💬 Reservar</a>
+    </div>
+  </div>
+</div>
+
+<!-- T2: Tirada Perdices + Faisanes 3 ENE -->
+<div class="modal-overlay" id="t2">
+  <div class="modal-box">
+    <div class="modal-header">
+      <button class="modal-close" onclick="closeModal('t2')">✕</button>
+      <div class="m-fecha">03 — 01 — 2027</div>
+      <div class="m-finca">Tirada de Perdices y Faisanes</div>
+      <div class="m-loc">📍 30 min. de Madrid</div>
+    </div>
+    <div class="modal-body">
+      <p>Jornada combinada de perdices y faisanes en finca privada a 30 minutos de Madrid. <strong>~ 400 perdices y ~ 100 faisanes</strong>, 15 puestos disponibles.</p>
+      <p>Se dará un taco a media mañana y comida al finalizar la tirada. Por la tarde se puede ir a rebuscar con perro. <strong>Se puede doblar puesto por 20€</strong>.</p>
+      <p>La organización se reserva el derecho de modificar las fechas por causa de fuerza mayor.</p>
+      <div>
+        <span class="modal-tag mt-rojo">~ 400 Perdices</span>
+        <span class="modal-tag mt-rojo">~ 100 Faisanes</span>
+        <span class="modal-tag mt-verde">15 puestos</span>
+        <span class="modal-tag mt-oro">Taco + Comida incluidos</span>
+        <span class="modal-tag mt-verde">Rebusca con perro (tarde)</span>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-precio">480€<small style="font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.1em;display:block;color:rgba(10,7,4,.4)">por puesto</small></div>
+      <a href="https://wa.me/34617517665?text=Hola%20Pedro%2C%20me%20interesa%20la%20tirada%20de%20perdices%20y%20faisanes%20del%203%20de%20enero%20de%202027" target="_blank" class="modal-wa">💬 Reservar</a>
     </div>
   </div>
 </div>
